@@ -2,8 +2,8 @@ build:
   system_packages:
     - "libssl-dev"
   python_packages:
-    - "torch==2.3.0
-    - "torchaudio==2.3.0
+    - "torch==2.3.0"
+    - "torchaudio==2.3.0"
   run:
     - "git clone https://github.com/myshell-ai/MeloTTS.git"
     - "cd MeloTTS"
