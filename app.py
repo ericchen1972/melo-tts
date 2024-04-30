@@ -11,6 +11,6 @@ class InferlessPythonModel:
     def infer(self, inputs):
         text = inputs["text"]
         self.model.tts_to_file(text, self.speaker_ids['EN-US'], self.output_path, speed=1.0)
-        return "Done"
+        return {"generated_audio":"Done"}
     def finalize(self,args):
         self.model = None
