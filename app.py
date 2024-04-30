@@ -1,25 +1,16 @@
-from bark import SAMPLE_RATE, generate_audio, preload_models
-import time
-import numpy as np
-import io
-import base64
-import soundfile as sf
+from melo.api import TTS
 
 class InferlessPythonModel:
     
     def initialize(self):
-        preload_models()
+        # Speed is adjustable
+        self.model = TTS(language='EN', device='auto')
+        self.speaker_ids = self.model.hps.data.spk2id
+        self.output_path = 'temp.wav'
         
     def infer(self, inputs):
-        prompt = inputs["prompt"]
-        audio_array = generate_audio(prompt)
-        buffer = io.BytesIO()
-        
-        sf.write(buffer, audio_array,SAMPLE_RATE, format='WAV')
-        buffer.seek(0)
-        base64_audio = base64.b64encode(buffer.read()).decode('utf-8')
-        
-        return {"generated_audio_base64": base64_audio}
-
+        text = inputs["text"]
+        self.model.tts_to_file(text, self.speaker_ids['EN-US'], self.output_path, speed=1.0)
+        return "Done"
     def finalize(self,args):
-        self.pipe = None
+        self.model = None
