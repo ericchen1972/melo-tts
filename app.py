@@ -11,7 +11,7 @@ class InferlessPythonModel:
     def infer(self, inputs):
         text = inputs["text"]
         self.model.tts_to_file(text, self.speaker_ids['EN-US'], self.output_path, speed=1.0)
-        with open(mp3, 'rb') as file:
+        with open(self.output_path, 'rb') as file:
             # Read the file's content
             audio_data = file.read()
             # Encode the data
