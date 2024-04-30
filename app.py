@@ -1,3 +1,4 @@
+import base64
 from melo.api import TTS
 
 class InferlessPythonModel:
