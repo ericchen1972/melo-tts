@@ -1,4 +1,4 @@
-# Bark
+# MeloTTS
 Bark is a transformer-based text-to-audio model created by Suno. Bark can generate highly realistic, multilingual speech as well as other audio - including music, background noise and simple sound effects. In this template we will import Bark into Inferless Platform.
 ## Deploy Bark using Inferless:
 - Deployment of Bark model using [bark](https://github.com/suno-ai/bark).
