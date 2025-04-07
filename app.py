@@ -1,10 +1,10 @@
 import base64
 from melo.api import TTS
+import nltk
 
-class InferlessPythonModel:
-    
+class InferlessPythonModel:    
     def initialize(self):
-        # Speed is adjustable
+        nltk.download('averaged_perceptron_tagger_eng')
         self.model = TTS(language='EN', device='auto')
         self.speaker_ids = self.model.hps.data.spk2id
         self.output_path = 'temp.wav'
