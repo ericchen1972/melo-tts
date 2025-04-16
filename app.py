@@ -11,10 +11,9 @@ class InferlessPythonModel:
         self.output_path = 'temp.wav'
         
     def infer(self, inputs):
-        # text = inputs["text"]
+        text = inputs["text"]
         speaker_key = list(self.speaker_ids.keys())[0]
-        text = "Hello there"
-        self.model.tts_to_file(text, speaker_key, self.output_path, speed=0.7)
+        self.model.tts_to_file(text, self.speaker_ids['ZH'], self.output_path, speed=0.7, format='wav')
         
         with open(self.output_path, 'rb') as file:
             audio_data = file.read()
