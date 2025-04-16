@@ -1,7 +1,7 @@
 import base64
 import sys
 import os
-sys.path.append('/MeloTTS')
+sys.path.append('./MeloTTS')
 from melo.api import TTS
 import nltk
 
