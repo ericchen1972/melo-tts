@@ -1,9 +1,10 @@
 import base64
 import sys
+import os
 sys.path.append('/MeloTTS')
 from melo.api import TTS
 import nltk
-import os
+
 
 class InferlessPythonModel:    
     def initialize(self):
