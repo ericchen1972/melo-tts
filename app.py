@@ -22,8 +22,7 @@ class InferlessPythonModel:
             
         os.remove(self.output_path)
         return {
-            "generated_audio_base64":base64_message,
-            "speaker_ids": list(self.speaker_ids.keys())
+            "generated_audio_base64":base64_message
         }
 
     def finalize(self,args):
