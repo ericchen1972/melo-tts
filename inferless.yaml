@@ -4,5 +4,23 @@ version: 2.0.0
 name: melo-tts
 import_source: LOCAL
 
-# you can choose the options between ONNX, TENSORFLOW, PYTORCH, Only applicable for FILE type import.
+# Framework for model import, here using PYTORCH for Melo TTS
 source_framework_type: PYTORCH
+
+build:
+  python_packages:
+    - torch==2.0.1
+    - numpy
+    - scipy
+    - soundfile
+    - git+https://github.com/myshell-ai/melo.git  # Ensure melo is installed
+    - transformers
+    - accelerate
+    - nltk  # Ensure nltk is installed for text processing if needed
+  system_packages:
+    - ffmpeg  # Required for audio handling
+    - libsndfile1  # Library for reading and writing audio files
+
+runtime:
+  device: GPU
+  memory: 24576  # 16GB memory, you can increase it depending on model size
