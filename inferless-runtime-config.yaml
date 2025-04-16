@@ -4,6 +4,6 @@ build:
   python_packages:
     - "torch==2.3.0"
     - "torchaudio==2.3.0"
-    - "git+https://github.com/myshell-ai/MeloTTS.git"
   run:
+    - "pip install git+https://github.com/myshell-ai/MeloTTS.git"
     - "python3 -m unidic download"
