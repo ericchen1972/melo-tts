@@ -9,6 +9,7 @@ class InferlessPythonModel:
         self.model = TTS(language='ZH', device='auto')
         self.speaker_ids = self.model.hps.data.spk2id
         self.output_path = 'temp.wav'
+        print("可用 speaker IDs:", self.speaker_ids)
         
     def infer(self, inputs):
         text = inputs["text"]
