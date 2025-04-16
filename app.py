@@ -6,7 +6,7 @@ import os
 class InferlessPythonModel:    
     def initialize(self):
         nltk.download('averaged_perceptron_tagger_eng')
-        self.model = TTS(language='ZH_MIX_EN', device='auto')
+        self.model = TTS(language='ZH', device='auto')
         self.speaker_ids = self.model.hps.data.spk2id
         self.output_path = 'temp.wav'
         
