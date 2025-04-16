@@ -9,7 +9,6 @@ class InferlessPythonModel:
         self.model = TTS(language='EN', device='auto')
         self.speaker_ids = self.model.hps.data.spk2id
         self.output_path = 'temp.wav'
-        print("可用 speaker IDs:", self.speaker_ids)
         
     def infer(self, inputs):
         text = inputs["text"]
@@ -21,7 +20,10 @@ class InferlessPythonModel:
             base64_message = base64_encoded_data.decode('utf-8')
             
         os.remove(self.output_path)
-        return {"generated_audio_base64":base64_message}
+        return {
+            "generated_audio_base64":base64_message,
+            "speaker_ids": dict(self.speaker_ids)
+        }
 
     def finalize(self,args):
         self.model = None
