@@ -12,7 +12,7 @@ class InferlessPythonModel:
         
     def infer(self, inputs):
         text = inputs["text"]
-        self.model.tts_to_file(text, self.speaker_ids['EN-US'], self.output_path, speed=0.7)
+        self.model.tts_to_file(text, self.speaker_ids['EN-US'], self.output_path, speed=1.0)
         
         with open(self.output_path, 'rb') as file:
             audio_data = file.read()
@@ -20,9 +20,7 @@ class InferlessPythonModel:
             base64_message = base64_encoded_data.decode('utf-8')
             
         os.remove(self.output_path)
-        return {
-            "generated_audio_base64":base64_message
-        }
+        return {"generated_audio_base64":base64_message}
 
     def finalize(self,args):
         self.model = None
