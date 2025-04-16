@@ -5,8 +5,7 @@ build:
     - "torch==2.3.0"
     - "torchaudio==2.3.0"
   run:
-    - |
-      git clone https://github.com/myshell-ai/MeloTTS.git /workspace/MeloTTS && \
-      pip install -e /workspace/MeloTTS && \
-      python3 -m unidic download && \
-      echo "export PYTHONPATH=$PYTHONPATH:/workspace/MeloTTS" >> ~/.bashrc
+    - "git clone https://github.com/myshell-ai/MeloTTS.git"
+    - "cd MeloTTS"
+    - "pip install -e ."
+    - "python3 -m unidic download"
