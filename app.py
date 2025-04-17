@@ -12,7 +12,6 @@ class InferlessPythonModel:
         
     def infer(self, inputs):
         text = inputs["text"]
-        #speaker_key = list(self.speaker_ids.keys())[0]
         self.model.tts_to_file(text, self.speaker_ids['ZH'], self.output_path, speed=0.7)
         
         with open(self.output_path, 'rb') as file:
