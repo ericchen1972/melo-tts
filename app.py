@@ -2,10 +2,6 @@ import base64
 from melo.api import TTS
 import nltk
 import os
-import codecs
-import sys
-
-sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
 class InferlessPythonModel:    
     def initialize(self):
