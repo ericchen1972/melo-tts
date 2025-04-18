@@ -29,7 +29,7 @@ class InferlessPythonModel:
         
         # speed 預設為 ["1.0"]，保證是 list
         speed_list = inputs.get("speed", ["1.0"])
-        speed = float(speed_list[0])
+        speed = float(speed_list)
 
         
         model = self.models.get(language)
