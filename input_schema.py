@@ -3,7 +3,12 @@ INPUT_SCHEMA = {
         'datatype': 'STRING',
         'required': True,
         'shape': [1],
-        'language': 'STRING',
         'example': ["Did you ever hear a folk tale about a giant turtle?"]
+    },
+    "language": {
+        'datatype': 'STRING',
+        'required': False,
+        'shape': [1],
+        'example': ["EN"]
     }
 }
