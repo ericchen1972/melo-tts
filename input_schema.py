@@ -12,9 +12,9 @@ INPUT_SCHEMA = {
         'example': ["EN"]
     },
     "speed": {
-        'datatype': 'FLOAT',
+        'datatype': 'STRING',
         'required': False,
         'shape': [1],
-        'example': [0.8]
+        'example': ["0.75"]
     }
 }
