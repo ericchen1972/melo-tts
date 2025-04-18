@@ -1,3 +1,8 @@
+import base64
+from melo.api import TTS
+import nltk
+import os
+
 class InferlessPythonModel:    
     def initialize(self):
         nltk.download('averaged_perceptron_tagger_eng')
