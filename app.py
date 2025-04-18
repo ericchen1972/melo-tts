@@ -19,6 +19,8 @@ class InferlessPythonModel:
     def infer(self, inputs):
         text = inputs["text"]
         language = inputs.get("language", "EN")  # 預設使用英文
+        speed_str = inputs.get("speed", ["0.75"])
+        speed = float(speed_str)
         
         model = self.models.get(language)
         speakers = self.speaker_ids.get(language)
@@ -28,7 +30,7 @@ class InferlessPythonModel:
         
         speaker_id = list(speakers.values())[0]  # 預設取第一個 speaker
         
-        model.tts_to_file(text, speaker_id, self.output_path, speed=0.7)
+        model.tts_to_file(text, speaker_id, self.output_path, speed=speed)
         
         with open(self.output_path, 'rb') as file:
             audio_data = file.read()
