@@ -3,6 +3,7 @@ INPUT_SCHEMA = {
         'text': 'STRING',
         'required': True,
         'language': 'STRING',
+        'shape': [1],
         'speed': 'FLOAT'
     }
 }
