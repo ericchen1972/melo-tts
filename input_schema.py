@@ -4,6 +4,7 @@ INPUT_SCHEMA = {
         'required': True,
         'language': 'STRING',
         'shape': [1],
-        'speed': 'FLOAT'
+        'speed': 'FLOAT',
+        'example': ["Did you ever hear a folk tale about a giant turtle?"]
     }
 }
