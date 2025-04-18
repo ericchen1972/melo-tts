@@ -1,6 +1,5 @@
 class InferlessPythonModel:    
     def initialize(self):
-        nltk.download('averaged_perceptron_tagger_eng')
         self.models = {}
         self.speaker_ids = {}
         self.output_path = 'temp.wav'
@@ -10,6 +9,7 @@ class InferlessPythonModel:
             model = TTS(language=lang, device='auto')
             self.models[lang] = model
             self.speaker_ids[lang] = model.hps.data.spk2id
+        nltk.download('averaged_perceptron_tagger_eng')
 
     def infer(self, inputs):
         text = inputs["text"]
