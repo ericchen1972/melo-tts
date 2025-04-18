@@ -10,11 +10,5 @@ INPUT_SCHEMA = {
         'required': False,
         'shape': [1],
         'example': ["EN"]
-    },
-    "speed": {
-        'datatype': 'STRING',
-        'required': False,
-        'shape': [1],
-        'example': ["0.75"]
     }
 }
