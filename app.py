@@ -17,9 +17,9 @@ class InferlessPythonModel:
             self.speaker_ids[lang] = model.hps.data.spk2id
         
     def infer(self, inputs):
-        text = inputs["text"]
-        language = inputs.get("language", "EN")  # 預設使用英文
-        speed_str = inputs.get("speed", ["0.75"])
+        text = inputs["text"][0]
+        language = inputs.get("language", "EN")[0]  # 預設使用英文
+        speed_str = inputs.get("speed", ["1.0"])[0]
         speed = float(speed_str)
         
         model = self.models.get(language)
