@@ -1,10 +1,9 @@
 INPUT_SCHEMA = {
-    "json": {
-        'text': 'STRING',
+    "text": {
+        'datatype': 'STRING',
         'required': True,
-        'language': 'STRING',
         'shape': [1],
-        'speed': 'FLOAT',
+        'language': 'STRING'
         'example': ["Did you ever hear a folk tale about a giant turtle?"]
     }
 }
